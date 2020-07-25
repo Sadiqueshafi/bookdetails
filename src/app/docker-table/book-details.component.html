@@ -1,0 +1,55 @@
+<div mat-dialog-content>
+  <div class="container">
+  <div class="text">
+    <h2 style="text-align: center;">Book Details</h2>
+    <hr>
+  </div>
+
+      <div class="row">
+
+          <div class=" col-md-12 col-sm-12 ofset-1">
+              <mat-card  mat-dialog-content layout-align="center center">
+
+                    <form [formGroup]="dockerbookservice.form" (ngSubmit)="onSubmit()">
+
+                      <mat-form-field style="width:100%">
+                        <input type="text" matInput name="name" formControlName="name" required placeholder="Name" required>
+                            <mat-error>Please Enter Your Name</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field style="width:100%">
+                      <input type="text" matInput formControlName="author" required placeholder="Auth" required>
+                          <mat-error>Please Enter Your Author</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field style="width:100%">
+                    <input type="text" matInput formControlName="publication" required placeholder="Publication" required>
+                  <mat-error>Please Enter Your Publication</mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width:100%">
+                  <input type="text" matInput formControlName="category" required placeholder="Category" required>
+                      <mat-error>Please Enter Your Category</mat-error>
+              </mat-form-field>
+
+              <mat-form-field style="width:100%">
+                <input type="text" matInput formControlName="pages" required placeholder="Pages" required>
+                    <mat-error>Please Enter Your Pages</mat-error>
+            </mat-form-field>
+
+            <mat-form-field style="width:100%">
+              <input type="text" matInput formControlName="price" required placeholder="Pages" required>
+                  <mat-error>Please Enter Your Price</mat-error>
+          </mat-form-field>
+
+
+                      <button type="submit" class="btn btn-danger btn-round" >Submit</button>
+
+
+                    </form>
+
+              </mat-card>
+          </div>
+          <!-- <p>output{{helloWorld}}</p> -->
+      </div>
+

@@ -1,0 +1,64 @@
+
+
+<div class="container">
+<mat-card>
+  <div class="container">
+<div class="row">
+  <div class="col-md-2 col-lg-2 col-sm-2 ss">
+    <button mat-raised-button color="accent"  (click)="openDialog()">Create</button>
+  </div>
+
+    <div class="search-hero col-md-8 col-lg-8 col-sm-8 ss">
+
+    <!-- <mat-form-field class="search-form-field"> -->
+   <input class="form-control" type="text" [ngModel]="searchKey" name="search" autocomplete="off" placeholder=" Start searching">
+   <!-- <button mat-button matSuffix mat-icon-button color="warn"><mat-icon matPrefix>search</mat-icon> Search</button> -->
+   <!-- </mat-form-field> -->
+  </div>
+
+  </div></div>
+
+  <div class="container" align="center">
+    <h2>Book List</h2><hr>
+  </div>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th scope="col" >Name</th>
+        <!-- <th scope="col" sortable="admissionNo" >Admission No</th> -->
+        <th scope="col" >Author</th>
+        <th scope="col" >Publication</th>
+        <th scope="col" >Category</th>
+        <th scope="col" >Pages</th>
+        <th scope="col" >Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let docker of hellodocker; let i = index">
+      <tr>
+
+          <td >{{docker.id}}</td>
+          <td><span contenteditable="true" (keyup)="changeValue(i, 'name', $event)" (blur)="updateList(i, 'name', $event)"></span>{{docker.name}}</td>
+          <td><span contenteditable="true" (keyup)="changeValue(i, 'author', $event)" (blur)="updateList(i, 'author', $event)"></span>{{docker.author}}</td>
+          <td><span contenteditable="true" (keyup)="changeValue(i, 'publication', $event)" (blur)="updateList(i, 'publication', $event)"></span>{{docker.publication}}</td>
+          <td><span contenteditable="true" (keyup)="changeValue(i, 'category', $event)" (blur)="updateList(i, 'category', $event)"></span>{{docker.category}}</td>
+          <td><span contenteditable="true" (keyup)="changeValue(i, 'pages', $event)" (blur)="updateList(i, 'pages', $event)"></span>{{docker.pages}}</td>
+          <td><span contenteditable="true" (keyup)="changeValue(i, 'price', $event)" (blur)="updateList(i, 'price', $event)"></span>{{docker.price|currency:'INR'}}</td>
+
+          <td>
+            <div class="btn btn-group" >
+              <!-- <button class="btn btn-md btn-info" data-toggle="tooltip" title="View" (click)="abc()"><i class="fa fa-eye"></i></button> -->
+              <!-- <button mat-raised-button color="accent" >Edit</button> [routerLink]="['edit',docker.id]" -->
+              <a  mat-button color="accent" (click)="onEdit(docker)" >Edit</a>
+              <button mat-raised-button color="warn" (click)="deletedocker(docker.id)">Delete</button>
+            </div>
+          </td>
+
+  </tbody>
+</table>
+
+</div>
+</mat-card>
+</div>
